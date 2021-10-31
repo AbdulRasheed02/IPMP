@@ -20,9 +20,8 @@ int main(){
 	for(int i=0;i<n;i++){
 		int element2=x-A[i];
 		if(m[element2]>0){
-			if(element2==A[i] && m[element2]==1){
-				
-			}
+			//element 2 is same as a[i] but there is only one apperance of a[i]
+			if(element2==A[i] && m[element2]==1){}
 			else{
 			cout<<"Elements exist: "<<element2<<" and "<<A[i];
 			return 0;
