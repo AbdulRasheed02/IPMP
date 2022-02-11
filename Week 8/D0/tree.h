@@ -28,6 +28,7 @@ public:
     void inorder(node *root);
     void preorder(node *root);
     void postorder(node *root);
+    void levelOrder(node *root);
 };
 
 int tree::getSize(node *root)
@@ -121,6 +122,28 @@ void tree::postorder(node *root)
     postorder(root->left);
     postorder(root->right);
     cout << root->value << " ";
+}
+
+void getLevelOrder(node *root, int level)
+{
+    if (root == NULL)
+    {
+        return;
+    }
+    if (level == 0)
+    {
+        cout << root->value << " ";
+    }
+    getLevelOrder(root->left, level - 1);
+    getLevelOrder(root->right, level - 1);
+}
+
+void tree::levelOrder(node *root)
+{
+    for (int i = 0; i < getHeight(root); i++)
+    {
+        getLevelOrder(root, i);
+    }
 }
 
 #endif
